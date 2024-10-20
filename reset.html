@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Reset Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+    body {
+        background-color: #c4d3e2;
+    }
+
+    .form-container {
+        width: 60vw;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .header {
+        width: 100%;
+        background-color: #71afe6;
+        border-radius: 10px 10px 0 0;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        border-bottom: 10px solid #386994;
+    }
+
+    .button {
+        background-color: #71afe6;
+        border: none;
+        font-weight: bold;
+        margin-top: 10px;
+        border-left: 20px solid #386994;
+    }
+
+    @media screen and (max-width: 1024px) {
+        .form-container {
+            width: 90vw;
+            margin-top: 15px;
+        }
+    }
+
+    .password-fields {
+        display: none;
+    }
+
+    .toggle-password {
+        cursor: pointer;
+        position: absolute;
+        right: 10px;
+        top: 70%;
+        transform: translateY(-50%);
+    }
+
+    .position-relative {
+        position: relative;
+    }
+</style>
+<body>
+
+<div class="container form-container p-0 mt-5">
+    <div class="header">
+        <h1>Password Reset Form</h1>
+    </div>
+    <form id="passwordResetForm" class="p-4">
+        <div class="form-group mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="name@example.com">
+            <div class="invalid-feedback">Please enter a valid email.</div>
+        </div>
+
+        <div class="password-fields">
+            <div class="form-group mb-3 position-relative">
+                <label for="newPassword" class="form-label">New Password</label>
+                <input type="password" class="form-control" id="newPassword" placeholder="Enter new password">
+                <span class="toggle-password" id="toggleNewPassword">Show</span>
+                <div class="invalid-feedback">Please enter a new password.</div>
+            </div>
+
+            <div class="form-group mb-3 position-relative">
+                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm new password">
+                <span class="toggle-password" id="toggleConfirmPassword">Show</span>
+                <div class="invalid-feedback">Passwords do not match.</div>
+            </div>
+        </div>
+
+        <button type="submit" class="w-100 text-white p-2 button">Submit</button>
+    </form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js "></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="reset.js"></script>
+</body>
+</html>
